@@ -1,0 +1,35 @@
+3) PROPOSED FRAMEWORK =>
+
+    Our proposed framework is composed of four processing blocks :
+    1) Computation of Optical Flow
+    2) Intensity Calculations using velocities computed from optical flow
+    3) Conversion into Binary Image using velocity threshold
+    4) Creation of contours satisfying a predefined range of estimnated area of
+    each contour
+
+
+    In this section, we will discuss each processing
+    block in detail. For sake of description of the proposed
+    approach we will employ videos taken from a crowd
+    related data set.
+    
+    3.1) Computation of Optical Flow ::
+         Computation of Optical Flow is the most important preprocessing
+         step for detecting` the moving objects from the video and therefore forms
+         the basis of our framework.
+         Optical Flow Computation is useful for detection, tracking and
+         understanding the behavior of the object. Traditionally, in video
+         surveillance with a fixed camera, researchers use background subtraction
+         method, where foreground objects are extracted from video if the pixels
+         in the current frame deviate significantly from the background.
+         Usually crowded objects move in wide areas, and for crowd flow
+         segmentation, we need to detect change in every pixel, so optical flow
+         methods reported in literature to compute sparse optical flow using the
+         interest points (Lucas-Kanade optical flow) [LK+81] or dense optical
+         flow for all pixels (HS optical flow) [HS81] in each frame can be used.
+         Since, we want to detect change in every pixel, we compute
+         dense optical flow. Since the optical flow vector of
+         each pixel has the magnitude and direction values, we use magnitude information to extract foreground, 
+         all the pixels which have higher magnitude than Tth
+         will be classified as foreground
+
